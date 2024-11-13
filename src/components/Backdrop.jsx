@@ -1,8 +1,19 @@
 import { AccumulativeShadows, RandomizedLight } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { easing } from 'maath';
 import { useRef } from 'react';
 
 function Backdrop() {
   const shadows = useRef();
+
+  useFrame((state, delta) =>
+    easing.dampC(
+      shadows.current.getMesh().material.color,
+      state.selectedColor,
+      1.25,
+      delta
+    )
+  );
 
   return (
     <AccumulativeShadows

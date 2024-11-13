@@ -1,8 +1,12 @@
 import { AiFillCamera, AiOutlineArrowLeft } from 'react-icons/ai';
+import { useSnapshot } from 'valtio';
+
 import { state } from './store';
 import './customizer.css';
 
 function Customizer() {
+  const snap = useSnapshot(state);
+
   const colors = [
     '#ccc',
     '#EFBD4E',
@@ -23,6 +27,7 @@ function Customizer() {
               key={color}
               className='circle'
               style={{ background: color }}
+              onClick={() => (state.selectedColor = color)}
             ></div>
           ))}
         </div>
@@ -35,13 +40,13 @@ function Customizer() {
             ))}
           </div>
         </div>
-        <button className='share' style={{ background: 'black' }}>
+        <button className='share' style={{ background: snap.selectedColor }}>
           DOWNLOAD
           <AiFillCamera size='1.3em' />
         </button>
         <button
           className='exit'
-          style={{ background: 'black' }}
+          style={{ background: snap.selectedColor }}
           onClick={() => (state.intro = true)}
         >
           GO BACK
