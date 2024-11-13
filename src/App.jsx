@@ -2,9 +2,11 @@ import { Canvas } from '@react-three/fiber';
 
 import { Environment, Center, OrbitControls } from '@react-three/drei';
 import Shirt from './components/Shirt';
+import Backdrop from './components/Backdrop';
 
 const App = ({ position = [0, 0, 2.5], fov = 25 }) => (
   <Canvas
+    shadows
     camera={{ position, fov }}
     eventSource={document.getElementById('root')}
     eventPrefix='client'
@@ -14,6 +16,7 @@ const App = ({ position = [0, 0, 2.5], fov = 25 }) => (
 
     <Center>
       <Shirt />
+      <Backdrop />
     </Center>
     <OrbitControls />
   </Canvas>
