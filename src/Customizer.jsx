@@ -1,5 +1,5 @@
 import { AiFillCamera, AiOutlineArrowLeft } from 'react-icons/ai';
-
+import { state } from './store';
 import './customizer.css';
 
 function Customizer() {
@@ -39,7 +39,11 @@ function Customizer() {
           DOWNLOAD
           <AiFillCamera size='1.3em' />
         </button>
-        <button className='exit' style={{ background: 'black' }}>
+        <button
+          className='exit'
+          style={{ background: 'black' }}
+          onClick={() => (state.intro = true)}
+        >
           GO BACK
           <AiOutlineArrowLeft size='1.3em' />
         </button>
