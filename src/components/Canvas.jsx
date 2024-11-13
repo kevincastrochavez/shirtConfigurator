@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 
-import { Environment, Center } from '@react-three/drei';
+import { Environment, Center, useGLTF } from '@react-three/drei';
 import Shirt from './Shirt';
 import Backdrop from './Backdrop';
 import CameraRig from './CameraRig';
@@ -23,5 +23,7 @@ const CanvasComponent = ({ position = [0, 0, 2.5], fov = 25 }) => (
     </CameraRig>
   </Canvas>
 );
+
+useGLTF.preload('/shirt_baked_collapsed.glb');
 
 export default CanvasComponent;
