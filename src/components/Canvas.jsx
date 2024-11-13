@@ -8,6 +8,7 @@ import CameraRig from './CameraRig';
 const CanvasComponent = ({ position = [0, 0, 2.5], fov = 25 }) => (
   <Canvas
     shadows
+    gl={{ preserveDrawingBuffer: true }} // needed to allow screenshot or export
     camera={{ position, fov }}
     eventSource={document.getElementById('root')}
     eventPrefix='client'

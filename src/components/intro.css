@@ -101,3 +101,22 @@ button:hover {
   box-shadow: inset 250px 0 0 0 black;
   transform: scale(1.1);
 }
+
+/* MOBILE ADJUSTMENTS */
+
+@media screen and (max-width: 600px) {
+  .section--container {
+    margin-left: 15vw;
+  }
+
+  .section--container h1 {
+    font-size: 8rem;
+    letter-spacing: -6px;
+    line-height: 6rem;
+  }
+
+  .support--content {
+    top: -10%;
+    left: 0;
+  }
+}
