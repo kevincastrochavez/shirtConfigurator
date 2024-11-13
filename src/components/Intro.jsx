@@ -1,10 +1,12 @@
-import './intro.css';
 import { AiOutlineHighlight } from 'react-icons/ai';
-import { state } from '../store';
+import { motion } from 'framer-motion';
 
-function Intro() {
+import { state } from '../store';
+import './intro.css';
+
+function Intro({ config }) {
   return (
-    <section key='main'>
+    <motion.section {...config} key='main'>
       <div className='section--container'>
         <div>
           <h1>LET'S DO IT.</h1>
@@ -25,7 +27,7 @@ function Intro() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

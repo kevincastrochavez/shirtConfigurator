@@ -1,14 +1,15 @@
 import { AiFillCamera, AiOutlineArrowLeft } from 'react-icons/ai';
 import { useSnapshot } from 'valtio';
+import { motion } from 'framer-motion';
 
 import { state } from './store';
 import './customizer.css';
 
-function Customizer() {
+function Customizer({ config }) {
   const snap = useSnapshot(state);
 
   return (
-    <section key='custom'>
+    <motion.section {...config} key='custom'>
       <div className='customizer'>
         <div className='color-options'>
           {snap?.colors?.map((color) => (
@@ -61,7 +62,7 @@ function Customizer() {
           <AiOutlineArrowLeft size='1.3em' />
         </button>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
